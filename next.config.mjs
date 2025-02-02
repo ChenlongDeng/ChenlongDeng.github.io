@@ -16,6 +16,8 @@ if (isGithubActions) {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     unoptimized: true,

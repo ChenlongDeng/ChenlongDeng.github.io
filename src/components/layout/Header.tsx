@@ -378,7 +378,7 @@ export function Header() {
                         transform: 'var(--avatar-hi-transform)'
                       }}
                     >
-                      Hi,&nbsp;&{' '}
+                      Hi,&nbsp;{' '}
                       <TypingAnimation
                         className="text-3xl md:text-4xl font-bold tracking-tight"
                         text={`I'm ${name} `}
