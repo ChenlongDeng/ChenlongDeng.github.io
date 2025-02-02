@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     unoptimized: true,
@@ -23,6 +24,8 @@ const nextConfig = {
     ],
   },
 }
+
+// export default nextConfig;
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
