@@ -59,5 +59,60 @@ export type PublicationType = {
                 url: "https://aclanthology.org/2024.emnlp-main.100/"
             },
         ]
-    }
+    },
+    {
+      title: "Enabling discriminative reasoning in LLMs for legal judgment prediction",
+      conference: "EMNLP 2024 (Findings)",
+      image: "/images/publications/ADAPT.png",
+      links: [
+          {
+              text: "Conference Version",
+              url: "https://aclanthology.org/2024.findings-emnlp.43/"
+          },
+      ]
+    },
+    {
+      title: "RAG-Studio: Towards In-Domain Adaptation of Retrieval Augmented Generation Through Self-Alignment",
+      conference: "EMNLP 2024 (Findings)",
+      image: "/images/publications/RAG-Studio.png",
+      links: [
+          {
+              text: "Conference Version",
+              url: "https://aclanthology.org/2024.findings-emnlp.41/"
+          },
+      ]
+    },
+    {
+      title: "An Element is Worth a Thousand Words: Enhancing Legal Case Retrieval by Incorporating Legal Elements",
+      conference: "ACL 2024 (Findings)",
+      image: "/images/publications/LegalElements.png",
+      links: [
+          {
+              text: "Conference Version",
+              url: "https://aclanthology.org/2024.findings-acl.139/"
+          },
+      ]
+    },
+    {
+      title: "Large Language Models for Information Retrieval: A Survey",
+      conference: "Preprint",
+      image: "/images/publications/LLMIR.png",
+      links: [
+        {
+          text: "ArXiv Preprint",
+          url: "https://arxiv.org/abs/2308.07107"
+        },
+      ]
+    },
+    {
+      title: "Improving Personalized Search with Dual-Feedback Network",
+      conference: "WSDM 2022",
+      image: "/images/publications/DualFeedback.png",
+      links: [
+          {
+              text: "Conference Version",
+              url: "https://dl.acm.org/doi/abs/10.1145/3488560.3498447"
+          },
+      ]
+    },
   ] 
