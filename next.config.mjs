@@ -38,7 +38,7 @@ const nextConfig = {
   },
 }
 
-export default nextConfig;
+// export default nextConfig;
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
