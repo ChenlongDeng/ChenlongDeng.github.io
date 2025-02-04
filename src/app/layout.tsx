@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: {
     template: `%s - ${name}`,
     default:
-      `${name} - ${headline}`,
+      `${name}`,
   },
   description:
     `${introduction}`,
@@ -19,6 +19,12 @@ export const metadata: Metadata = {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed`,
     },
   },
+  icons: [
+    {
+      url: '/favicon.png',
+      sizes: '32x32'
+    }
+  ]
 }
 
 export default function RootLayout({

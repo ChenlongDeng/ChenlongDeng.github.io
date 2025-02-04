@@ -12,7 +12,7 @@ import avatarImage from '@/images/avatar.jpg'
 import { navItems } from '@/config/siteConfig'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { GithubRepo } from '@/components/shared/GithubRepo'
-import { name } from '@/config/infoConfig'
+import { name, chinese_name } from '@/config/infoConfig'
 import { ChevronDownIcon, XIcon } from 'lucide-react'
 
 import TypingAnimation from "@/components/ui/typing-animation";
@@ -381,7 +381,7 @@ export function Header() {
                       Hi,&nbsp;{' '}
                       <TypingAnimation
                         className="text-3xl md:text-4xl font-bold tracking-tight"
-                        text={`I'm ${name} `}
+                        text={`I'm ${name} (${chinese_name})`}
                         duration={150}
                       />
                       👋
