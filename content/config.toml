@@ -1,0 +1,45 @@
+[site]
+title = "Chenlong Deng"
+description = "PhD student at the Gaoling School of Artificial Intelligence, Renmin University of China."
+favicon = "/avatar.jpg"
+last_updated = "November 18, 2025"
+
+[author]
+name = "Chenlong Deng (邓琛龙)"
+title = "Fourth-year PhD Student"
+institution = "Gaoling School of Artificial Intelligence\nRenmin University of China"
+avatar = "/portrait.jpg"
+
+[social]
+# Contact information (leave blank or delete to hide)
+
+email = "dengchenlong@ruc.edu.cn"
+location = "Beijing, China"
+location_url = "https://maps.google.com"
+location_details = [
+  "Gaoling School of Artificial Intelligence,",
+  "Renmin University of China, Beijing, China"
+]
+google_scholar = "https://scholar.google.com/citations?user=nqp_-AsAAAAJ&hl=en&oi=ao"
+orcid = "https://orcid.org/0009-0004-9888-2589"
+github = "https://github.com/ChenlongDeng"
+linkedin = "https://www.linkedin.com/in/chenlong-deng-bba26b377/"
+
+[features]
+# Show a like button on the about page
+enable_likes = true
+
+# Display all subpages on a single page
+enable_one_page_mode = false
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications"

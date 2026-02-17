@@ -1,56 +1,20 @@
-import Link from 'next/link'
+'use client';
 
-import { ContainerInner, ContainerOuter } from '@/components/layout/Container'
-import { footerItems } from '@/config/siteConfig'
-import { ThemeToggle } from '@/components/shared/ThemeToggle'
-import { name } from '@/config/infoConfig'
-import SocialLinks from '@/components/home/SocialLinks'
-import VisitData from '@/components/layout/VisitData'
-
-
-function NavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  return (
-    <Link
-      href={href}
-      className="transition hover:text-primary"
-    >
-      {children}
-    </Link>
-  )
+interface FooterProps {
+  lastUpdated?: string;
 }
 
-export function Footer() {
+export default function Footer({ lastUpdated }: FooterProps) {
   return (
-    <footer className="mt-32 flex-none">
-      <ContainerOuter>
-        <div className="border-t border-muted pb-16 pt-10">
-          <ContainerInner>
-            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-start">
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium">
-                {footerItems.map((item) => (
-                  <NavLink key={item.name} href={item.href}>{item.name}</NavLink>
-                ))}
-              </div>
-              <div className='flex flex-col justify-center items-start'>
-                <div className='flex flex-row justify-end items-center gap-2'>
-                  <p className="text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} {name}. All rights reserved.
-                  </p>
-                  <ThemeToggle />
-                </div>
-                <SocialLinks className='mt-0'/>
-                <VisitData />
-              </div>
-            </div>
-          </ContainerInner>
+    <footer className="border-t border-neutral-200/50 bg-neutral-50/50 dark:bg-neutral-900/50 dark:border-neutral-700/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+          <p className="text-xs text-neutral-500">
+            Last updated: {lastUpdated || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
+          <p className="text-xs text-neutral-500">Personal academic website</p>
         </div>
-      </ContainerOuter>
+      </div>
     </footer>
-  )
+  );
 }

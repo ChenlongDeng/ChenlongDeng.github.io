@@ -1,0 +1,60 @@
+type = "about"
+title = "About"
+
+[profile]
+research_interests = [
+  "Large Language Models",
+  "Information Retrieval",
+  "Efficient Long-context Modeling"
+]
+
+[[sections]]
+id = "about"
+type = "markdown"
+source = "bio.md"
+title = "About"
+
+[[sections]]
+id = "education_experience"
+type = "education"
+title = "Education & Experience"
+
+[[sections.education]]
+degree = "PhD in Artificial Intelligence"
+institution = "Renmin University of China"
+period = "2022 - Present"
+location = "Beijing, China"
+description = "Pursuing doctoral studies in artificial intelligence, with a focus on machine learning and intelligent systems."
+logo = "/logos/RUC.png"
+logoAlt = "Renmin University of China logo"
+
+[[sections.education]]
+degree = "B.Eng. in Computer Science"
+institution = "Renmin University of China"
+period = "2018 - 2022"
+location = "Beijing, China"
+description = "Undergraduate training in computer science."
+logo = "/logos/RUC.png"
+logoAlt = "Renmin University of China logo"
+
+[[sections.experience]]
+title = "Research Intern"
+organization = "Tencent AI Lab"
+period = "Apr 2024 - Jul 2025"
+location = "Shenzhen, China"
+description = "Worked on AI research and engineering projects, including model development, experimentation, and evaluation."
+logo = "/logos/TencentAILab.png"
+logoAlt = "Tencent AI Lab logo"
+
+[[sections]]
+id = "news"
+type = "list"
+title = "News"
+source = "news.toml"
+
+[[sections]]
+id = "featured_publications"
+type = "publications"
+title = "Selected Publications"
+filter = "selected"
+limit = 5
