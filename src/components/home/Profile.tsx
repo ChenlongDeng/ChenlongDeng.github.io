@@ -73,15 +73,19 @@ export default function Profile({ author, social }: ProfileProps) {
         }] : []),
     ];
 
+    const nameMatch = author.name.match(/^(.*?)\s*[（(]\s*([^()（）]+)\s*[）)]\s*$/);
+    const englishName = nameMatch?.[1]?.trim() || author.name;
+    const chineseName = nameMatch?.[2]?.trim();
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="sticky top-8"
+            className="lg:sticky lg:top-6"
         >
             {/* Profile Image */}
-            <div className="w-56 h-56 mx-auto mb-5 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03] border-2 border-neutral-200 dark:border-neutral-700">
+            <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-neutral-200 dark:border-neutral-700">
                 <Image
                     src={author.avatar}
                     alt={author.name}
@@ -93,20 +97,25 @@ export default function Profile({ author, social }: ProfileProps) {
             </div>
 
             {/* Name and Title */}
-            <div className="text-center mb-6">
-                <h1 className="text-3xl font-serif font-bold text-primary mb-2 tracking-tight">
-                    {author.name}
+            <div className="text-center mb-5">
+                <h1 className="text-[1.7rem] sm:text-2xl font-serif font-bold text-primary mb-1.5 tracking-tight">
+                    {englishName}
                 </h1>
-                <p className="text-base text-accent font-semibold mb-1">
+                {chineseName && (
+                    <p className="text-[1.25rem] sm:text-lg font-serif font-semibold text-primary -mt-0.5 mb-1.5 tracking-tight">
+                        {chineseName}
+                    </p>
+                )}
+                <p className="text-[0.94rem] sm:text-[0.86rem] text-accent font-semibold mb-0.5">
                     {author.title}
                 </p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 whitespace-pre-line">
+                <p className="text-[0.84rem] sm:text-[0.76rem] text-neutral-900 dark:text-neutral-300 whitespace-pre-line leading-relaxed">
                     {author.institution}
                 </p>
             </div>
 
             {/* Contact Links */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 relative px-2">
+            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-6 relative px-2">
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     if (link.isLocation) {
@@ -125,7 +134,7 @@ export default function Profile({ author, social }: ProfileProps) {
                                     }}
                                     className={`p-2 sm:p-2 transition-colors duration-200 ${isAddressPinned
                                         ? 'text-accent'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent'
+                                        : 'text-neutral-800 dark:text-neutral-400 hover:text-accent'
                                         }`}
                                     aria-label={link.name}
                                 >
@@ -202,7 +211,7 @@ export default function Profile({ author, social }: ProfileProps) {
                                     }}
                                     className={`p-2 sm:p-2 transition-colors duration-200 ${isEmailPinned
                                         ? 'text-accent'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent'
+                                        : 'text-neutral-800 dark:text-neutral-400 hover:text-accent'
                                         }`}
                                     aria-label={link.name}
                                 >
@@ -263,7 +272,7 @@ export default function Profile({ author, social }: ProfileProps) {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
+                            className="p-2 sm:p-2 text-neutral-800 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
                             aria-label={link.name}
                         >
                             <IconComponent className="h-5 w-5" />

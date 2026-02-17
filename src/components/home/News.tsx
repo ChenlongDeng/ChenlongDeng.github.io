@@ -57,11 +57,11 @@ export default function News({ items, title = 'News' }: NewsProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
         >
-            <h2 className="text-[1.65rem] font-serif font-bold text-primary mb-4 flex items-center gap-2">
+            <h2 className="text-[1.5rem] sm:text-[1.35rem] font-serif font-bold text-primary mb-3 flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-accent" />
                 {title}
             </h2>
-            <div className="motion-card surface-card space-y-2.5 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl p-4 shadow-sm border border-neutral-200 dark:border-neutral-700/80">
+            <div className="motion-card surface-card space-y-2 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl p-3.5 shadow-sm border border-neutral-200 dark:border-neutral-700/80">
                 {items.slice(0, 5).map((item, index) => (
                     <motion.div 
                         key={index} 
@@ -69,12 +69,12 @@ export default function News({ items, title = 'News' }: NewsProps) {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: 0.05 * index }}
                         whileHover={{ x: 3 }}
-                        className="flex items-start gap-2.5 pb-2.5 last:pb-0 border-b border-neutral-200 dark:border-neutral-700/70 last:border-0"
+                        className="flex flex-col sm:flex-row sm:items-start gap-1.5 sm:gap-2 pb-2 last:pb-0 border-b border-neutral-200 dark:border-neutral-700/70 last:border-0"
                     >
-                        <span className="text-[0.72rem] font-semibold text-accent bg-accent/10 px-2 py-1 rounded-md whitespace-nowrap mt-0.5 transition-colors duration-200">
+                        <span className="inline-flex w-fit text-[0.74rem] sm:text-[0.64rem] font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded-md whitespace-nowrap sm:mt-0.5 transition-colors duration-200">
                             {item.date}
                         </span>
-                        <p className="text-[0.9rem] text-neutral-700 dark:text-neutral-200 leading-relaxed flex-1">
+                        <p className="text-[0.9rem] sm:text-[0.8rem] text-neutral-900 dark:text-neutral-200 leading-relaxed flex-1">
                             {renderContent(item.content).map((node, idx) => (
                                 <Fragment key={idx}>{node}</Fragment>
                             ))}

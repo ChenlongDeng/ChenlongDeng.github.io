@@ -138,9 +138,9 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 bg-background min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 bg-background min-h-screen">
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
         {/* Left Column - Profile */}
         <div className="lg:col-span-1">
@@ -152,7 +152,7 @@ export default function Home() {
         </div>
 
         {/* Right Column - Content */}
-        <div className="lg:col-span-2 space-y-7 relative">
+        <div className="lg:col-span-2 space-y-5 sm:space-y-6 relative">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-8 -right-8 h-40 w-40 rounded-full bg-accent/10 blur-3xl animate-float-slow"
@@ -162,7 +162,7 @@ export default function Home() {
             className="pointer-events-none absolute top-64 -left-10 h-44 w-44 rounded-full bg-sky-400/10 dark:bg-sky-300/10 blur-3xl animate-float-slower"
           />
           {pagesToShow.map((page) => (
-            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8 relative z-10">
+            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-5 sm:space-y-6 relative z-10">
               {page.type === 'about' && page.sections.map((section: SectionConfig) => {
                 switch (section.type) {
                   case 'markdown':
