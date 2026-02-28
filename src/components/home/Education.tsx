@@ -36,7 +36,7 @@ function OrganizationLogoBadge({ logo, alt }: { logo?: string; alt?: string }) {
     }
 
     return (
-        <div className="h-10 w-10 sm:h-11 sm:w-11 rounded-lg overflow-hidden bg-white ring-1 ring-neutral-200 dark:ring-neutral-700 dark:bg-neutral-800 transition-transform duration-300 group-hover:scale-[1.04]">
+        <div className="shrink-0 h-10 w-10 sm:h-11 sm:w-11 rounded-lg overflow-hidden bg-white ring-1 ring-neutral-200 dark:ring-neutral-700 dark:bg-neutral-800 transition-transform duration-300 group-hover:scale-[1.04]">
             <Image
                 src={logo}
                 alt={alt || 'Organization logo'}
@@ -48,14 +48,73 @@ function OrganizationLogoBadge({ logo, alt }: { logo?: string; alt?: string }) {
     );
 }
 
-export default function EducationExperience({ 
-    education, 
-    experience, 
-    title = 'Education & Experience' 
-}: EducationExperienceProps) {
-    const educationCardClassName =
-        'motion-card surface-card group rounded-xl border border-neutral-200/80 dark:border-neutral-700/70 bg-white/90 dark:bg-neutral-800/70 p-4 sm:px-4 sm:py-3 shadow-sm';
+function ItemCard({
+    logo, logoAlt, primaryText, secondaryText, location, period
+}: {
+    logo?: string;
+    logoAlt?: string;
+    primaryText: string;
+    secondaryText: string;
+    location?: string;
+    period: string;
+}) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ y: -2, scale: 1.003 }}
+            className="motion-card surface-card group relative rounded-xl border border-neutral-200/70 dark:border-neutral-700/60 bg-white/85 dark:bg-neutral-800/65 p-3.5 sm:p-4 shadow-sm cursor-default z-0 hover:z-10"
+        >
+            <div className="flex items-center gap-3">
+                <OrganizationLogoBadge logo={logo} alt={logoAlt} />
+                {/* Mobile layout */}
+                <div className="min-w-0 flex-1 lg:hidden">
+                    <div className="space-y-0.5">
+                        <h4 className="text-[0.88rem] font-semibold text-primary leading-snug truncate">
+                            {primaryText}
+                        </h4>
+                        <p className="text-[0.82rem] text-neutral-600 dark:text-neutral-300 font-medium leading-snug truncate">
+                            {secondaryText}
+                        </p>
+                        <div className="flex items-center gap-2 pt-0.5 flex-wrap">
+                            {location && (
+                                <p className="text-[0.76rem] text-neutral-500 dark:text-neutral-400">
+                                    {location}
+                                </p>
+                            )}
+                            <span className="inline-flex text-[0.7rem] text-accent font-medium whitespace-nowrap px-2 py-0.5 rounded-full bg-accent/10">
+                                {period}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                {/* Desktop layout */}
+                <div className="hidden lg:flex lg:items-center lg:justify-between lg:gap-3 min-w-0 flex-1">
+                    <div className="min-w-0 flex-1 grid grid-cols-[2fr_1.85fr_1.25fr] items-center gap-x-3">
+                        <h4 className="min-w-0 truncate pr-3 border-r border-neutral-200/80 dark:border-neutral-600/50 text-[0.86rem] font-semibold text-primary">
+                            {primaryText}
+                        </h4>
+                        <p className="min-w-0 truncate pr-3 border-r border-neutral-200/80 dark:border-neutral-600/50 text-[0.85rem] text-neutral-600 dark:text-neutral-300 font-medium">
+                            {secondaryText}
+                        </p>
+                        <p className="min-w-0 truncate text-[0.83rem] text-neutral-500 dark:text-neutral-400">
+                            {location || ''}
+                        </p>
+                    </div>
+                    <span className="shrink-0 inline-flex text-[0.72rem] text-accent font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full bg-accent/10">
+                        {period}
+                    </span>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
 
+export default function EducationExperience({
+    education,
+    experience,
+    title = 'Education & Experience'
+}: EducationExperienceProps) {
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -64,63 +123,30 @@ export default function EducationExperience({
             className="space-y-5"
         >
             <h2 className="text-[1.42rem] sm:text-[1.35rem] font-serif font-bold text-primary">{title}</h2>
-            
+
             {/* Education Section */}
             {education && education.length > 0 && (
                 <div className="space-y-3">
-                    <h3 className="text-[0.92rem] sm:text-[0.88rem] font-semibold text-primary flex items-center gap-2">
-                        <AcademicCapIcon className="h-[1.1rem] w-[1.1rem] text-accent" />
-                        Education
+                    <h3 className="text-[0.9rem] sm:text-[0.86rem] font-semibold text-primary flex items-center gap-1.5">
+                        <AcademicCapIcon className="h-4 w-4 text-accent shrink-0" />
+                        <span>Education</span>
                     </h3>
-                    <div className="space-y-3">
+                    <div className="space-y-2.5">
                         {education.map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0, x: -16 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.4, delay: 0.1 * index }}
-                                whileHover={{ y: -3, scale: 1.004 }}
-                                className={educationCardClassName}
                             >
-                                <div className="flex items-start lg:items-center gap-3">
-                                    <div className="self-start lg:self-center">
-                                        <OrganizationLogoBadge logo={item.logo} alt={item.logoAlt} />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="space-y-1.5 lg:hidden">
-                                            <h4 className="text-[0.98rem] sm:text-[0.88rem] font-semibold text-primary leading-snug break-words">
-                                                {item.institution}
-                                            </h4>
-                                            <p className="text-[0.9rem] sm:text-[0.78rem] text-neutral-900 dark:text-neutral-200 font-medium leading-snug break-words">
-                                                {item.degree}
-                                            </p>
-                                            {item.location && (
-                                                <p className="text-[0.86rem] sm:text-[0.76rem] text-neutral-900 dark:text-neutral-400 leading-snug break-words">
-                                                    {item.location}
-                                                </p>
-                                            )}
-                                            <span className="inline-flex w-fit text-[0.82rem] sm:text-[0.72rem] text-accent font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full bg-accent/10 mt-0.5">
-                                                {item.period}
-                                            </span>
-                                        </div>
-                                        <div className="hidden lg:flex lg:items-center lg:justify-between lg:gap-4 min-w-0">
-                                            <div className="min-w-0 flex-1 grid grid-cols-[minmax(220px,2fr)_minmax(220px,1.85fr)_minmax(170px,1.25fr)] items-center gap-x-3">
-                                                <h4 className="min-w-0 truncate pr-3 border-r border-neutral-300 dark:border-neutral-600 text-[0.88rem] font-semibold text-primary">
-                                                    {item.institution}
-                                                </h4>
-                                                <p className="min-w-0 truncate pr-3 border-r border-neutral-300 dark:border-neutral-600 text-[0.88rem] text-neutral-900 dark:text-neutral-200 font-medium">
-                                                    {item.degree}
-                                                </p>
-                                                <p className="min-w-0 truncate text-[0.88rem] text-neutral-800 dark:text-neutral-400">
-                                                    {item.location || ''}
-                                                </p>
-                                            </div>
-                                            <span className="inline-flex text-[0.72rem] text-accent font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full bg-accent/10">
-                                                {item.period}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ItemCard
+                                    logo={item.logo}
+                                    logoAlt={item.logoAlt}
+                                    primaryText={item.institution}
+                                    secondaryText={item.degree}
+                                    location={item.location}
+                                    period={item.period}
+                                />
                             </motion.div>
                         ))}
                     </div>
@@ -130,59 +156,26 @@ export default function EducationExperience({
             {/* Experience Section */}
             {experience && experience.length > 0 && (
                 <div className="space-y-3">
-                    <h3 className="text-[0.92rem] sm:text-[0.88rem] font-semibold text-primary flex items-center gap-2">
-                        <BriefcaseIcon className="h-[1.1rem] w-[1.1rem] text-accent" />
-                        Experience
+                    <h3 className="text-[0.9rem] sm:text-[0.86rem] font-semibold text-primary flex items-center gap-1.5">
+                        <BriefcaseIcon className="h-4 w-4 text-accent shrink-0" />
+                        <span>Experience</span>
                     </h3>
-                    <div className="space-y-3">
+                    <div className="space-y-2.5">
                         {experience.map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0, x: -16 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.4, delay: 0.1 * index }}
-                                whileHover={{ y: -3, scale: 1.004 }}
-                                className={educationCardClassName}
                             >
-                                <div className="flex items-start lg:items-center gap-3">
-                                    <div className="self-start lg:self-center">
-                                        <OrganizationLogoBadge logo={item.logo} alt={item.logoAlt} />
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <div className="space-y-1.5 lg:hidden">
-                                            <h4 className="text-[0.98rem] sm:text-[0.88rem] font-semibold text-primary leading-snug break-words">
-                                                {item.organization}
-                                            </h4>
-                                            <p className="text-[0.9rem] sm:text-[0.78rem] text-neutral-900 dark:text-neutral-200 font-medium leading-snug break-words">
-                                                {item.title}
-                                            </p>
-                                            {item.location && (
-                                                <p className="text-[0.86rem] sm:text-[0.76rem] text-neutral-900 dark:text-neutral-400 leading-snug break-words">
-                                                    {item.location}
-                                                </p>
-                                            )}
-                                            <span className="inline-flex w-fit text-[0.82rem] sm:text-[0.72rem] text-accent font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full bg-accent/10 mt-0.5">
-                                                {item.period}
-                                            </span>
-                                        </div>
-                                        <div className="hidden lg:flex lg:items-center lg:justify-between lg:gap-4 min-w-0">
-                                            <div className="min-w-0 flex-1 grid grid-cols-[minmax(220px,2fr)_minmax(220px,1.85fr)_minmax(170px,1.25fr)] items-center gap-x-3">
-                                                <h4 className="min-w-0 truncate pr-3 border-r border-neutral-300 dark:border-neutral-600 text-[0.88rem] font-semibold text-primary">
-                                                    {item.organization}
-                                                </h4>
-                                                <p className="min-w-0 truncate pr-3 border-r border-neutral-300 dark:border-neutral-600 text-[0.88rem] text-neutral-900 dark:text-neutral-200 font-medium">
-                                                    {item.title}
-                                                </p>
-                                                <p className="min-w-0 truncate text-[0.88rem] text-neutral-800 dark:text-neutral-400">
-                                                    {item.location || ''}
-                                                </p>
-                                            </div>
-                                            <span className="inline-flex text-[0.72rem] text-accent font-medium whitespace-nowrap px-2.5 py-0.5 rounded-full bg-accent/10">
-                                                {item.period}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ItemCard
+                                    logo={item.logo}
+                                    logoAlt={item.logoAlt}
+                                    primaryText={item.organization}
+                                    secondaryText={item.title}
+                                    location={item.location}
+                                    period={item.period}
+                                />
                             </motion.div>
                         ))}
                     </div>
