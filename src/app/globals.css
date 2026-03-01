@@ -397,6 +397,17 @@ html.light .motion-card {
   opacity: 0.85;
 }
 
+.dark .motion-card::before {
+  background:
+    radial-gradient(130% 80% at 0% 0%, rgba(100, 160, 255, 0.06), transparent 55%),
+    linear-gradient(135deg, rgba(80, 130, 220, 0.05) 0%, transparent 60%);
+  opacity: 0.5;
+}
+
+.dark .motion-card:hover::before {
+  opacity: 0.75;
+}
+
 html.light nav[class*="fixed"] {
   background: linear-gradient(
     180deg,
