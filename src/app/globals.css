@@ -42,8 +42,8 @@
   --glass-shadow: rgba(15, 23, 42, 0.12);
 
   /* Elevated surfaces in light mode */
-  --surface-1: rgba(255, 255, 255, 0.88);
-  --surface-2: rgba(240, 248, 255, 0.72);
+  --surface-1: rgba(255, 255, 255, 0.94);
+  --surface-2: rgba(250, 251, 253, 0.90);
   --surface-border: rgba(200, 214, 230, 0.28);
   --surface-shadow: 0 8px 32px -12px rgba(15, 23, 42, 0.18), 0 2px 8px -4px rgba(15, 23, 42, 0.08);
   --surface-shadow-hover: 0 16px 48px -16px rgba(15, 23, 42, 0.24), 0 4px 12px -4px rgba(15, 23, 42, 0.10);
@@ -188,10 +188,8 @@ body {
 
 html.light body {
   background-image:
-    radial-gradient(ellipse 140% 60% at 105% -10%, rgba(184, 135, 70, 0.11), transparent 55%),
-    radial-gradient(ellipse 110% 55% at -10% -5%, rgba(56, 189, 248, 0.09), transparent 52%),
-    radial-gradient(ellipse 90% 50% at 50% 110%, rgba(148, 163, 184, 0.12), transparent 58%),
-    radial-gradient(ellipse 80% 40% at 80% 60%, rgba(186, 230, 253, 0.06), transparent 50%),
+    radial-gradient(ellipse 140% 60% at 105% -10%, rgba(184, 135, 70, 0.08), transparent 55%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, rgba(148, 163, 184, 0.08), transparent 58%),
     linear-gradient(170deg, #fdfeff 0%, #f8fcff 25%, #f4f7fb 60%, var(--background) 100%);
   background-attachment: fixed;
   background-size: cover;
@@ -225,7 +223,7 @@ a {
 /* Glass morphism utilities */
 .glass {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.10) 60%, rgba(255, 255, 255, 0.04) 100%),
+    radial-gradient(ellipse 110% 55% at 50% -5%, rgba(255, 255, 255, 0.20), transparent 65%),
     var(--glass-bg);
   backdrop-filter: blur(28px) saturate(160%) brightness(1.01);
   -webkit-backdrop-filter: blur(28px) saturate(160%) brightness(1.01);
@@ -233,14 +231,13 @@ a {
   box-shadow:
     0 8px 32px -12px var(--glass-shadow),
     0 2px 8px -4px rgba(15, 23, 42, 0.06),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.58),
-    inset 0 -1px 0 rgba(148, 163, 184, 0.14),
-    inset 1px 0 0 rgba(255, 255, 255, 0.22);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.12);
 }
 
 .glass-card {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.10) 60%, rgba(255, 255, 255, 0.04) 100%),
+    radial-gradient(ellipse 110% 55% at 50% -5%, rgba(255, 255, 255, 0.20), transparent 65%),
     var(--glass-bg);
   backdrop-filter: blur(28px) saturate(160%) brightness(1.01);
   -webkit-backdrop-filter: blur(28px) saturate(160%) brightness(1.01);
@@ -248,9 +245,8 @@ a {
   box-shadow:
     0 8px 32px -12px var(--glass-shadow),
     0 2px 8px -4px rgba(15, 23, 42, 0.06),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.58),
-    inset 0 -1px 0 rgba(148, 163, 184, 0.14),
-    inset 1px 0 0 rgba(255, 255, 255, 0.22);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.12);
   border-radius: 1rem;
   padding: 1.5rem;
 }
@@ -343,46 +339,51 @@ nav[class*="fixed"] {
 
 html.light .surface-card {
   background:
-    radial-gradient(150% 100% at 0% 0%, rgba(255, 255, 255, 0.82), transparent 52%),
-    radial-gradient(110% 80% at 100% 100%, rgba(186, 230, 253, 0.14), transparent 56%),
-    linear-gradient(155deg, var(--surface-1), var(--surface-2));
+    linear-gradient(180deg, var(--surface-1), var(--surface-2));
   backdrop-filter: blur(22px) saturate(150%) brightness(1.01);
   -webkit-backdrop-filter: blur(22px) saturate(150%) brightness(1.01);
   border-color: rgba(220, 232, 245, 0.55);
   box-shadow:
     var(--surface-shadow),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
-    inset 0 -1px 0 rgba(148, 163, 184, 0.10),
-    inset 1px 0 0 rgba(255, 255, 255, 0.30);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.80),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.10);
 }
 
 html.light .surface-card:hover {
   box-shadow: var(--surface-shadow-hover),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.80),
-    inset 0 -1px 0 rgba(148, 163, 184, 0.10),
-    inset 1px 0 0 rgba(255, 255, 255, 0.32);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.10);
 }
 
 .dark .surface-card {
   background:
-    radial-gradient(150% 100% at 0% 0%, rgba(80, 130, 220, 0.07), transparent 52%),
-    radial-gradient(110% 80% at 100% 100%, rgba(60, 100, 200, 0.04), transparent 56%),
-    linear-gradient(155deg, rgba(15, 25, 50, 0.85), rgba(10, 18, 38, 0.75));
-  backdrop-filter: blur(22px) saturate(140%) brightness(0.95);
-  -webkit-backdrop-filter: blur(22px) saturate(140%) brightness(0.95);
-  border-color: rgba(99, 145, 200, 0.16);
+    radial-gradient(ellipse 120% 60% at 50% -5%, rgba(110, 170, 255, 0.07), transparent 62%),
+    radial-gradient(ellipse 90% 55% at 100% 110%, rgba(60, 100, 200, 0.03), transparent 60%),
+    linear-gradient(180deg, rgba(20, 30, 58, 0.88), rgba(12, 20, 42, 0.80));
+  backdrop-filter: blur(22px) saturate(140%) brightness(0.97);
+  -webkit-backdrop-filter: blur(22px) saturate(140%) brightness(0.97);
+  border-color: rgba(100, 150, 220, 0.20);
   box-shadow:
-    0 8px 32px -12px rgba(2, 8, 30, 0.55),
-    0 2px 8px -4px rgba(2, 8, 30, 0.25),
-    inset 0 1.5px 0 rgba(140, 190, 255, 0.08),
-    inset 0 -1px 0 rgba(20, 40, 100, 0.20),
-    inset 1px 0 0 rgba(100, 160, 255, 0.05);
+    0 8px 32px -12px rgba(2, 8, 30, 0.60),
+    0 2px 8px -4px rgba(2, 8, 30, 0.28),
+    inset 0 1.5px 0 rgba(160, 210, 255, 0.11),
+    inset 0 -1px 0 rgba(20, 40, 100, 0.22);
+  transition: box-shadow 280ms ease, border-color 220ms ease;
+}
+
+.dark .surface-card:hover {
+  border-color: rgba(120, 170, 240, 0.28);
+  box-shadow:
+    0 12px 40px -12px rgba(2, 8, 30, 0.65),
+    0 4px 12px -4px rgba(2, 8, 30, 0.32),
+    inset 0 1.5px 0 rgba(170, 220, 255, 0.14),
+    inset 0 -1px 0 rgba(20, 40, 100, 0.22);
 }
 
 html.light .motion-card {
   box-shadow:
     var(--surface-shadow),
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.70),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
     inset 0 -1px 0 rgba(148, 163, 184, 0.08);
   border-color: rgba(210, 226, 242, 0.50);
 }
@@ -391,9 +392,8 @@ html.light .motion-card {
   box-shadow:
     0 8px 32px -12px rgba(2, 8, 30, 0.55),
     0 2px 8px -4px rgba(2, 8, 30, 0.30),
-    inset 0 1.5px 0 rgba(150, 200, 255, 0.10),
-    inset 0 -1px 0 rgba(20, 40, 100, 0.25),
-    inset 1px 0 0 rgba(100, 160, 255, 0.06);
+    inset 0 1.5px 0 rgba(150, 200, 255, 0.09),
+    inset 0 -1px 0 rgba(20, 40, 100, 0.25);
   border-color: rgba(99, 145, 200, 0.18);
 }
 
@@ -402,26 +402,19 @@ html.light .motion-card {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(130% 80% at 0% 0%, rgba(255, 255, 255, 0.32), transparent 55%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 60%);
-  opacity: 0.6;
+  background: none;
+  opacity: 0;
   transition: opacity 280ms ease;
-}
-
-.motion-card:hover::before {
-  opacity: 0.85;
 }
 
 .dark .motion-card::before {
   background:
-    radial-gradient(130% 80% at 0% 0%, rgba(100, 160, 255, 0.06), transparent 55%),
-    linear-gradient(135deg, rgba(80, 130, 220, 0.05) 0%, transparent 60%);
-  opacity: 0.5;
+    radial-gradient(ellipse 110% 55% at 50% -8%, rgba(140, 190, 255, 0.07), transparent 65%);
+  opacity: 0.65;
 }
 
 .dark .motion-card:hover::before {
-  opacity: 0.75;
+  opacity: 0.90;
 }
 
 html.light nav[class*="fixed"] {

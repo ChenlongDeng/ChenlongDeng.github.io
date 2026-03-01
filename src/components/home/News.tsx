@@ -61,7 +61,7 @@ export default function News({ items, title = 'News' }: NewsProps) {
                 <SparklesIcon className="h-5 w-5 text-accent" />
                 {title}
             </h2>
-            <div className="motion-card surface-card space-y-2 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl p-3.5 shadow-sm border border-neutral-200 dark:border-neutral-700/80">
+            <div className="motion-card surface-card space-y-2 rounded-xl p-3.5 shadow-sm border border-neutral-200/70 dark:border-neutral-700/60">
                 {items.slice(0, 5).map((item, index) => (
                     <motion.div 
                         key={index} 

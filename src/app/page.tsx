@@ -153,14 +153,6 @@ export default function Home() {
 
         {/* Right Column - Content */}
         <div className="lg:col-span-2 space-y-5 sm:space-y-6 relative">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-8 -right-8 h-40 w-40 rounded-full bg-accent/10 blur-3xl animate-float-slow"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute top-64 -left-10 h-44 w-44 rounded-full bg-sky-400/10 dark:bg-sky-300/10 blur-3xl animate-float-slower"
-          />
           {pagesToShow.map((page) => (
             <section key={page.id} id={page.id} className="scroll-mt-24 space-y-5 sm:space-y-6 relative z-10">
               {page.type === 'about' && page.sections.map((section: SectionConfig) => {

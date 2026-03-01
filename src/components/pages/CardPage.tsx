@@ -26,7 +26,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`surface-card bg-white dark:bg-neutral-900 ${embedded ? "p-3.5" : "p-4"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
+                        className={`surface-card ${embedded ? "p-3.5" : "p-4"} rounded-xl shadow-sm border border-neutral-200/70 dark:border-neutral-700/50 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
                         <div className="flex justify-between items-start mb-1.5">
                             <h3 className={`${embedded ? "text-[0.92rem]" : "text-[1.04rem]"} font-semibold text-primary`}>{item.title}</h3>
