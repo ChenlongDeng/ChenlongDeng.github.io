@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import { execSync } from "child_process";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { getConfig } from "@/lib/config";
+
+function getGitLastUpdated(): string {
+  try {
+    const date = execSync('git log -1 --format=%cd --date=format:"%B %d, %Y"', {
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'ignore'],
+    }).trim();
+    return date || '';
+  } catch {
+    return '';
+  }
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
@@ -102,7 +115,7 @@ export default function RootLayout({
           <main className="min-h-screen pt-16 lg:pt-20">
             {children}
           </main>
-          <Footer lastUpdated={config.site.last_updated} />
+          <Footer lastUpdated={getGitLastUpdated() || config.site.last_updated} />
         </ThemeProvider>
       </body>
     </html>
