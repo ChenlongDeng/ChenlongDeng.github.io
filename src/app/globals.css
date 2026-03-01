@@ -363,6 +363,22 @@ html.light .surface-card:hover {
     inset 1px 0 0 rgba(255, 255, 255, 0.32);
 }
 
+.dark .surface-card {
+  background:
+    radial-gradient(150% 100% at 0% 0%, rgba(80, 130, 220, 0.07), transparent 52%),
+    radial-gradient(110% 80% at 100% 100%, rgba(60, 100, 200, 0.04), transparent 56%),
+    linear-gradient(155deg, rgba(15, 25, 50, 0.85), rgba(10, 18, 38, 0.75));
+  backdrop-filter: blur(22px) saturate(140%) brightness(0.95);
+  -webkit-backdrop-filter: blur(22px) saturate(140%) brightness(0.95);
+  border-color: rgba(99, 145, 200, 0.16);
+  box-shadow:
+    0 8px 32px -12px rgba(2, 8, 30, 0.55),
+    0 2px 8px -4px rgba(2, 8, 30, 0.25),
+    inset 0 1.5px 0 rgba(140, 190, 255, 0.08),
+    inset 0 -1px 0 rgba(20, 40, 100, 0.20),
+    inset 1px 0 0 rgba(100, 160, 255, 0.05);
+}
+
 html.light .motion-card {
   box-shadow:
     var(--surface-shadow),
