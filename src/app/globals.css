@@ -432,3 +432,12 @@ html.light nav[class*="fixed"] {
   );
   border-bottom-color: rgba(160, 174, 196, 0.26);
 }
+
+.dark nav[class*="fixed"] {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 18, 36, 0.92) 0%,
+    rgba(8, 14, 30, 0.85) 100%
+  );
+  border-bottom-color: rgba(99, 120, 180, 0.20);
+}
