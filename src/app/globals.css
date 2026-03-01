@@ -371,6 +371,16 @@ html.light .motion-card {
   border-color: rgba(210, 226, 242, 0.50);
 }
 
+.dark .motion-card {
+  box-shadow:
+    0 8px 32px -12px rgba(2, 8, 30, 0.55),
+    0 2px 8px -4px rgba(2, 8, 30, 0.30),
+    inset 0 1.5px 0 rgba(150, 200, 255, 0.10),
+    inset 0 -1px 0 rgba(20, 40, 100, 0.25),
+    inset 1px 0 0 rgba(100, 160, 255, 0.06);
+  border-color: rgba(99, 145, 200, 0.18);
+}
+
 .motion-card::before {
   content: "";
   position: absolute;
