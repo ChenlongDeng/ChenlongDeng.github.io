@@ -39,10 +39,19 @@ logoAlt = "Renmin University of China logo"
 
 [[sections.experience]]
 title = "Research Intern"
+organization = "ByteDance Seed"
+period = "Apr 2026 - Present"
+location = "Beijing, China"
+description = "Multimodal foundation models"
+logo = "/logos/ByteDance.png"
+logoAlt = "ByteDance Seed logo"
+
+[[sections.experience]]
+title = "Research Intern"
 organization = "Tencent AI Lab"
 period = "Apr 2024 - Jul 2025"
 location = "Shenzhen, China"
-description = "Worked on AI research and engineering projects, including model development, experimentation, and evaluation."
+description = "Efficient long-context LLMs"
 logo = "/logos/TencentAILab.png"
 logoAlt = "Tencent AI Lab logo"
 
