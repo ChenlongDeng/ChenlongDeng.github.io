@@ -13,9 +13,9 @@ import {
     ChevronLeftIcon,
     ChevronRightIcon,
     LinkIcon,
-    CodeBracketIcon,
     DocumentIcon
 } from '@heroicons/react/24/outline';
+import { Github } from 'lucide-react';
 import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
 import { cn, formatVenueDisplay } from '@/lib/utils';
@@ -306,8 +306,8 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
                                             >
-                                                <CodeBracketIcon className="h-4 w-4 mr-1.5" />
-                                                Code
+                                                <Github className="h-4 w-4 mr-1.5" />
+                                                GitHub
                                             </a>
                                         )}
                                         {pub.abstract && (

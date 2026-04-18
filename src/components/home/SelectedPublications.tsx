@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Publication } from '@/types/publication';
-import { DocumentTextIcon, DocumentIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import { DocumentTextIcon, DocumentIcon } from '@heroicons/react/24/outline';
+import { Github } from 'lucide-react';
 import { formatVenueDisplay } from '@/lib/utils';
 
 interface SelectedPublicationsProps {
@@ -98,7 +99,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center px-2.5 py-1 rounded-full text-[0.76rem] sm:text-[0.7rem] font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
                                             >
-                                                <CodeBracketIcon className="h-3.5 w-3.5 mr-1.5" />
+                                                <Github className="h-3.5 w-3.5 mr-1.5" />
                                                 GitHub
                                             </a>
                                         )}
