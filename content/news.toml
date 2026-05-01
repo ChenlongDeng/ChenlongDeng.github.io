@@ -1,4 +1,8 @@
 [[news]]
+date = "2026-05"
+content = "1 paper accepted to ICML 2026 🎉 Thanks to all collaborators!"
+
+[[news]]
 date = "2026-02"
 content = "We released [DeepImageSearch](https://arxiv.org/abs/2602.10809), defining a new paradigm for image retrieval."
 

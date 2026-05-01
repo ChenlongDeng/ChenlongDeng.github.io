@@ -57,6 +57,9 @@ export function formatVenueDisplay(venue?: string, year?: number): string {
   if (upper.includes('NEURIPS')) {
     return displayYear ? `NeurIPS ${displayYear}` : 'NeurIPS';
   }
+  if (upper.includes('ICML')) {
+    return displayYear ? `ICML ${displayYear}` : 'ICML';
+  }
   if (upper.includes('WSDM') || upper.includes('WEB SEARCH AND DATA MINING')) {
     return displayYear ? `WSDM ${displayYear}` : 'WSDM';
   }
