@@ -1,25 +1,5 @@
--- Backend for privacy-conscious visitor statistics on the static website.
--- The public site may call the approved RPCs below but cannot access raw rows.
+-- Add coarse, privacy-preserving browser traits without exposing raw rows.
 
-create table if not exists public.visitor_locations (
-  visitor_id uuid primary key,
-  country text not null check (char_length(country) between 1 and 80),
-  city text check (city is null or char_length(city) <= 100),
-  lat double precision not null check (lat between -90 and 90),
-  lng double precision not null check (lng between -180 and 180),
-  first_seen timestamptz not null default now(),
-  last_seen timestamptz not null default now(),
-  visit_count bigint not null default 1 check (visit_count > 0),
-  device_type text not null default 'unknown' check (device_type in ('mobile', 'tablet', 'desktop', 'unknown')),
-  os_family text not null default 'unknown' check (os_family in ('windows', 'macos', 'ios', 'android', 'linux', 'chromeos', 'other', 'unknown')),
-  browser_family text not null default 'unknown' check (browser_family in ('chrome', 'safari', 'firefox', 'edge', 'opera', 'samsung', 'other', 'unknown')),
-  language text not null default 'unknown' check (language in ('en', 'zh', 'es', 'fr', 'de', 'ja', 'ko', 'pt', 'ru', 'it', 'other', 'unknown')),
-  screen_size text not null default 'unknown' check (screen_size in ('small', 'medium', 'large', 'unknown')),
-  referrer_source text not null default 'unknown' check (referrer_source in ('direct', 'internal', 'google', 'bing', 'baidu', 'duckduckgo', 'github', 'linkedin', 'twitter', 'academic', 'other', 'unknown')),
-  entry_page text not null default 'other' check (entry_page in ('home', 'publications', 'other'))
-);
-
--- Idempotent upgrades for projects created with the original location-only schema.
 alter table public.visitor_locations
   add column if not exists device_type text not null default 'unknown'
     check (device_type in ('mobile', 'tablet', 'desktop', 'unknown')),
@@ -36,13 +16,9 @@ alter table public.visitor_locations
   add column if not exists entry_page text not null default 'other'
     check (entry_page in ('home', 'publications', 'other'));
 
-create index if not exists visitor_locations_first_seen_idx
-  on public.visitor_locations (first_seen);
-
 alter table public.visitor_locations enable row level security;
 revoke all on table public.visitor_locations from anon, authenticated;
 
--- A versioned RPC avoids breaking an already-open copy of the old site during deployment.
 create or replace function public.record_visit_v2(
   p_visitor_id uuid,
   p_country text,
@@ -89,7 +65,6 @@ begin
     raise exception 'Invalid visitor data';
   end if;
 
-  -- Serialize this low-volume endpoint so the creation caps are race-safe.
   perform pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtext('visitor_locations:new'));
 
   if exists (
@@ -125,8 +100,6 @@ begin
     return;
   end if;
 
-  -- A public UUID can be forged. These caps bound storage growth without
-  -- collecting IP addresses; they are abuse protection, not identity proof.
   if (select count(*) from public.visitor_locations where first_seen >= now() - interval '1 hour') >= 120
      or (select count(*) from public.visitor_locations where first_seen >= now() - interval '1 day') >= 1000 then
     raise exception 'Visitor intake is temporarily rate limited';
@@ -152,8 +125,6 @@ begin
 end;
 $$;
 
--- Legacy location-only RPC retained for old cached pages. It delegates to the
--- same validated implementation and cannot overwrite known first-touch traits.
 create or replace function public.record_visit(
   p_visitor_id uuid,
   p_country text,
@@ -182,37 +153,9 @@ as $$
   );
 $$;
 
-create or replace function public.get_visitor_map()
-returns table (
-  country text,
-  city text,
-  lat double precision,
-  lng double precision,
-  last_seen timestamptz,
-  unique_visitors bigint
-)
-language sql
-stable
-security definer
-set search_path = ''
-as $$
-  select
-    locations.country,
-    locations.city,
-    locations.lat,
-    locations.lng,
-    max(locations.last_seen) as last_seen,
-    count(*)::bigint as unique_visitors
-  from public.visitor_locations as locations
-  group by locations.country, locations.city, locations.lat, locations.lng
-  order by last_seen desc;
-$$;
-
 revoke all on function public.record_visit_v2(uuid, text, text, double precision, double precision, text, text, text, text, text, text, text) from public, anon, authenticated;
 revoke all on function public.record_visit(uuid, text, text, double precision, double precision) from public, anon, authenticated;
-revoke all on function public.get_visitor_map() from public, anon, authenticated;
 grant execute on function public.record_visit_v2(uuid, text, text, double precision, double precision, text, text, text, text, text, text, text) to anon;
 grant execute on function public.record_visit(uuid, text, text, double precision, double precision) to anon;
-grant execute on function public.get_visitor_map() to anon;
 
 notify pgrst, 'reload schema';

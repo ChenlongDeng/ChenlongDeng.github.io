@@ -15,7 +15,8 @@ export default function Footer({ lastUpdated }: FooterProps) {
           <p className="text-xs text-neutral-500">Personal academic website</p>
         </div>
         <p className="mx-auto mt-2 max-w-3xl text-center text-[0.68rem] leading-relaxed text-neutral-400 dark:text-neutral-500">
-          Privacy: anonymous visitor statistics use a random browser identifier and an approximate city lookup by{' '}
+          Privacy: privacy-conscious visitor statistics use a pseudonymous random browser identifier, an approximate
+          city lookup by{' '}
           <a
             href="https://ipwhois.io/privacy"
             target="_blank"
@@ -24,7 +25,9 @@ export default function Footer({ lastUpdated }: FooterProps) {
           >
             ipwhois.io
           </a>
-          ; this site does not store IP addresses. Do Not Track and Global Privacy Control are respected.
+          , and coarse device, operating-system, browser, language, screen-size, referral-source, and entry-page
+          categories. The visitor-statistics database does not store IP addresses, exact device details, or full
+          referral URLs. Do Not Track and Global Privacy Control are respected.
         </p>
       </div>
     </footer>
