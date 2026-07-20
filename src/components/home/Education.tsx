@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 
 export interface EducationItem {
@@ -48,12 +48,13 @@ function OrganizationLogoBadge({ logo, alt }: { logo?: string; alt?: string }) {
 
     return (
         <div className="shrink-0 h-9 w-9 sm:h-9 sm:w-9 rounded-lg overflow-hidden bg-white ring-1 ring-neutral-200 dark:ring-neutral-700 dark:bg-neutral-800 transition-transform duration-300 group-hover:scale-[1.04]">
-            <Image
+            <ResponsiveImage
                 src={logo}
                 alt={alt || 'Organization logo'}
                 width={36}
                 height={36}
                 className="h-full w-full object-contain p-1.5"
+                sizes="36px"
             />
         </div>
     );

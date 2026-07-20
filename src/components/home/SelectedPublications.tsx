@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { Publication } from '@/types/publication';
 import { DocumentTextIcon, DocumentIcon } from '@heroicons/react/24/outline';
 import { Github } from 'lucide-react';
@@ -48,11 +48,13 @@ export default function SelectedPublications({ publications, title = 'Selected P
                             {pub.preview && (
                                 <div className="w-full md:w-48 flex-shrink-0">
                                     <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                                        <Image
+                                        <ResponsiveImage
                                             src={`/papers/${pub.preview}`}
                                             alt={pub.title}
                                             fill
                                             className="object-cover"
+                                            variant="16x9"
+                                            desktopVariant="4x3"
                                             sizes="(max-width: 768px) 100vw, 192px"
                                         />
                                     </div>

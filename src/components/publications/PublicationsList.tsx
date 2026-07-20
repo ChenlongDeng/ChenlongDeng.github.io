@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import {
     MagnifyingGlassIcon,
     FunnelIcon,
@@ -236,13 +236,13 @@ export default function PublicationsList({ config, publications, embedded = fals
                                 {pub.preview && (
                                     <div className="w-full md:w-48 flex-shrink-0">
                                         <div className="aspect-video relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                                            <Image
+                                            <ResponsiveImage
                                                 src={`/papers/${pub.preview}`}
                                                 alt={pub.title}
                                                 fill
                                                 className="object-cover"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                quality={100}
+                                                variant="16x9"
+                                                sizes="(max-width: 768px) 100vw, 192px"
                                             />
                                         </div>
                                     </div>

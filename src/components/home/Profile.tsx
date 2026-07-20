@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import {
     EnvelopeIcon,
     AcademicCapIcon,
@@ -86,13 +86,15 @@ export default function Profile({ author, social }: ProfileProps) {
         >
             {/* Profile Image */}
             <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-neutral-200 dark:border-neutral-700">
-                <Image
+                <ResponsiveImage
                     src={author.avatar}
                     alt={author.name}
                     width={224}
                     height={224}
                     className="w-full h-full object-cover object-[32%_center]"
-                    priority
+                    sizes="(min-width: 640px) 208px, 176px"
+                    loading="eager"
+                    fetchPriority="high"
                 />
             </div>
 

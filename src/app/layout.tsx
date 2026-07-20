@@ -68,7 +68,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
         {/* Speed up font connections */}
         <link rel="dns-prefetch" href="https://google-fonts.jialeliu.com" />
         <link rel="preconnect" href="https://google-fonts.jialeliu.com" crossOrigin="" />

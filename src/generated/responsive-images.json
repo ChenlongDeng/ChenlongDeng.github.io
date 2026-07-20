@@ -1,0 +1,522 @@
+{
+  "/portrait.jpg": {
+    "sources": [
+      {
+        "src": "/optimized/portrait-224.webp",
+        "width": 224
+      },
+      {
+        "src": "/optimized/portrait-448.webp",
+        "width": 448
+      },
+      {
+        "src": "/optimized/portrait-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/papers/ADAPT.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/ADAPT-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/ADAPT-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/ADAPT-16x9-1237.webp",
+          "width": 1237
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/ADAPT-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/ADAPT-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/ADAPT-4x3-928.webp",
+          "width": 928
+        }
+      ]
+    }
+  },
+  "/papers/AttentionEntropyStudy.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/AttentionEntropyStudy-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/AttentionEntropyStudy-16x9-679.webp",
+          "width": 679
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/AttentionEntropyStudy-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/AttentionEntropyStudy-4x3-509.webp",
+          "width": 509
+        }
+      ]
+    }
+  },
+  "/papers/ChatRetriever.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/ChatRetriever-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/ChatRetriever-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/ChatRetriever-16x9-836.webp",
+          "width": 836
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/ChatRetriever-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/ChatRetriever-4x3-627.webp",
+          "width": 627
+        }
+      ]
+    }
+  },
+  "/papers/DeepImageSearch.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/DeepImageSearch-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/DeepImageSearch-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/DeepImageSearch-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/DeepImageSearch-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/DeepImageSearch-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/DeepImageSearch-4x3-1205.webp",
+          "width": 1205
+        }
+      ]
+    }
+  },
+  "/papers/DualFeedback.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/DualFeedback-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/DualFeedback-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/DualFeedback-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/DualFeedback-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/DualFeedback-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/DualFeedback-4x3-1280.webp",
+          "width": 1280
+        }
+      ]
+    }
+  },
+  "/papers/GLARE.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/GLARE-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/GLARE-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/GLARE-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/GLARE-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/GLARE-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/GLARE-4x3-1280.webp",
+          "width": 1280
+        }
+      ]
+    }
+  },
+  "/papers/GistTokenStudy.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/GistTokenStudy-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/GistTokenStudy-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/GistTokenStudy-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/GistTokenStudy-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/GistTokenStudy-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/GistTokenStudy-4x3-965.webp",
+          "width": 965
+        }
+      ]
+    }
+  },
+  "/papers/InComeS.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/InComeS-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/InComeS-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/InComeS-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/InComeS-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/InComeS-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/InComeS-4x3-995.webp",
+          "width": 995
+        }
+      ]
+    }
+  },
+  "/papers/Keller.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/Keller-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/Keller-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/Keller-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/Keller-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/Keller-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/Keller-4x3-1261.webp",
+          "width": 1261
+        }
+      ]
+    }
+  },
+  "/papers/LLMIRSurvey.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/LLMIRSurvey-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LLMIRSurvey-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LLMIRSurvey-16x9-1195.webp",
+          "width": 1195
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/LLMIRSurvey-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LLMIRSurvey-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LLMIRSurvey-4x3-896.webp",
+          "width": 896
+        }
+      ]
+    }
+  },
+  "/papers/LawThinker.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/LawThinker-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LawThinker-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LawThinker-16x9-1056.webp",
+          "width": 1056
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/LawThinker-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LawThinker-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LawThinker-4x3-997.webp",
+          "width": 997
+        }
+      ]
+    }
+  },
+  "/papers/LegalElement.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/LegalElement-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LegalElement-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LegalElement-16x9-1046.webp",
+          "width": 1046
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/LegalElement-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/LegalElement-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/LegalElement-4x3-1046.webp",
+          "width": 1046
+        }
+      ]
+    }
+  },
+  "/papers/PoU.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/PoU-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/PoU-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/PoU-16x9-1280.webp",
+          "width": 1280
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/PoU-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/PoU-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/PoU-4x3-1056.webp",
+          "width": 1056
+        }
+      ]
+    }
+  },
+  "/papers/RAGStudio.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/RAGStudio-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/RAGStudio-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/RAGStudio-16x9-912.webp",
+          "width": 912
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/RAGStudio-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/RAGStudio-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/RAGStudio-4x3-912.webp",
+          "width": 912
+        }
+      ]
+    }
+  },
+  "/papers/UniGist.png": {
+    "variants": {
+      "16x9": [
+        {
+          "src": "/optimized/papers/UniGist-16x9-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/UniGist-16x9-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/UniGist-16x9-1191.webp",
+          "width": 1191
+        }
+      ],
+      "4x3": [
+        {
+          "src": "/optimized/papers/UniGist-4x3-384.webp",
+          "width": 384
+        },
+        {
+          "src": "/optimized/papers/UniGist-4x3-768.webp",
+          "width": 768
+        },
+        {
+          "src": "/optimized/papers/UniGist-4x3-893.webp",
+          "width": 893
+        }
+      ]
+    }
+  },
+  "/logos/ByteDance.png": {
+    "sources": [
+      {
+        "src": "/optimized/logos/ByteDance-72.webp",
+        "width": 72
+      },
+      {
+        "src": "/optimized/logos/ByteDance-108.webp",
+        "width": 108
+      }
+    ]
+  },
+  "/logos/RUC.png": {
+    "sources": [
+      {
+        "src": "/optimized/logos/RUC-72.webp",
+        "width": 72
+      },
+      {
+        "src": "/optimized/logos/RUC-108.webp",
+        "width": 108
+      }
+    ]
+  },
+  "/logos/TencentAILab.png": {
+    "sources": [
+      {
+        "src": "/optimized/logos/TencentAILab-72.webp",
+        "width": 72
+      },
+      {
+        "src": "/optimized/logos/TencentAILab-108.webp",
+        "width": 108
+      }
+    ]
+  }
+}
