@@ -82,7 +82,7 @@ export default function Profile({ author, social }: ProfileProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:sticky lg:top-6"
+            className="lg:sticky lg:top-[6.25rem]"
         >
             {/* Profile Image */}
             <div className="w-44 h-44 sm:w-52 sm:h-52 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-neutral-200 dark:border-neutral-700">

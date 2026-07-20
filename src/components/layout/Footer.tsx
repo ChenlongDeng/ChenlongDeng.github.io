@@ -14,6 +14,18 @@ export default function Footer({ lastUpdated }: FooterProps) {
           </p>
           <p className="text-xs text-neutral-500">Personal academic website</p>
         </div>
+        <p className="mx-auto mt-2 max-w-3xl text-center text-[0.68rem] leading-relaxed text-neutral-400 dark:text-neutral-500">
+          Privacy: anonymous visitor statistics use a random browser identifier and an approximate city lookup by{' '}
+          <a
+            href="https://ipwhois.io/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-neutral-300 underline-offset-2 hover:text-neutral-600 dark:decoration-neutral-600 dark:hover:text-neutral-300"
+          >
+            ipwhois.io
+          </a>
+          ; this site does not store IP addresses. Do Not Track and Global Privacy Control are respected.
+        </p>
       </div>
     </footer>
   );

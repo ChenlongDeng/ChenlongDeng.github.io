@@ -3,6 +3,7 @@ import { execSync } from "child_process";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import VisitorTracker from "@/components/analytics/VisitorTracker";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { getConfig } from "@/lib/config";
 
@@ -107,6 +108,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
+          <VisitorTracker />
           <Navigation
             items={config.navigation}
             siteTitle={config.site.title}
